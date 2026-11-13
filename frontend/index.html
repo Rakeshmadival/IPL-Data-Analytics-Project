@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IPL Analytics | Explore the Game</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <aside class="sidebar">
+    <a class="brand" href="#overview">🏏 IPL <small>ANALYTICS</small></a>
+    <p class="label">WORKSPACE</p>
+    <nav aria-label="Main navigation">
+      <a class="active" href="#overview" aria-current="page">◫ &nbsp; Overview</a>
+      <a href="#teams">♜ &nbsp; Team analysis</a>
+      <a href="#insights">⌁ &nbsp; Match insights</a>
+      <a href="#powerbi">▤ &nbsp; Power BI reports</a>
+      <a href="#prediction">✳ &nbsp; Prediction lab</a>
+      <a href="#model">▥ &nbsp; Model evaluation</a>
+    </nav>
+    <div class="sidebottom">
+      <span class="dot"></span> DATASET · 2008–2024
+      <p>Python · Analytics · Machine Learning</p>
+      <a href="../Analysis/IPL_Data_Analytics_Handbook.ipynb">Open analysis notebook ↗</a>
+    </div>
+  </aside>
+
+  <main>
+    <header>
+      <div>
+        <span class="eyebrow">CRICKET INTELLIGENCE PLATFORM</span>
+        <h1>IPL Analytics Dashboard</h1>
+      </div>
+      <span class="pill" id="page-pill">● Historical data</span>
+    </header>
+
+    <section id="overview" class="hero" data-page="overview">
+      <div>
+        <span class="eyebrow orange">THE GAME, THROUGH DATA</span>
+        <h2>Every match tells<br><em>a data story.</em></h2>
+        <p>Explore team performance, match patterns and an experimental machine-learning model across IPL seasons 2008–2024.</p>
+        <a class="button" href="#teams">Explore the data →</a>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="ring"></div>
+        <div class="bat">🏏</div>
+        <div class="floatstat">
+          <small>MATCHES ANALYSED</small>
+          <b id="hero-matches">—</b>
+          <small id="hero-period">Historical dataset</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" data-page="overview">
+      <div class="heading">
+        <div><span class="eyebrow">AT A GLANCE</span><h2>IPL, in numbers</h2></div>
+        <small id="overview-period">Historical dataset</small>
+      </div>
+      <div class="kpis">
+        <article><small>Total matches</small><b id="matches-count">—</b><span>Matches in the dataset</span></article>
+        <article><small>Deliveries</small><b id="deliveries-count">—</b><span>Ball-by-ball records</span></article>
+        <article><small>Model accuracy</small><b id="overview-accuracy">—</b><span>Held-out test set</span></article>
+        <article><small>Toss-winner baseline</small><b id="overview-baseline">—</b><span>Same evaluation set</span></article>
+      </div>
+      <p class="source-note" id="overview-status" role="status">Loading historical metrics…</p>
+    </section>
+
+    <section id="teams" class="section page-hidden" data-page="teams">
+      <div class="heading">
+        <div><span class="eyebrow">TEAM PERFORMANCE</span><h2>Team rankings &amp; comparisons</h2></div>
+        <small>Wins recorded in the supplied report</small>
+      </div>
+      <div class="cols team-layout">
+        <article class="panel">
+          <div class="panelhead">
+            <div><h3>Team rankings</h3><small>Wins and win percentage across matches played</small></div>
+            <span class="tag">WINS</span>
+          </div>
+          <div id="team-rankings" class="team-rankings" aria-label="Team win rankings"></div>
+          <p class="source-note" id="team-status" role="status">Loading team results from matches.csv…</p>
+        </article>
+        <article class="panel feature">
+          <span class="eyebrow orange">MOST WINS</span>
+          <b class="percent" id="leading-team-rate">—</b>
+          <h3 id="leading-team-name">—</h3>
+          <p id="leading-team-record">Loading results…</p>
+          <hr>
+          <p class="source-note">Win percentage is calculated as recorded wins divided by matches played (appearances as either team).</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="insights" class="section page-hidden" data-page="insights">
+      <div class="heading">
+        <div><span class="eyebrow">MATCH PATTERNS</span><h2>Outcomes, toss &amp; venues</h2></div>
+        <small>Historical report summaries · 2008–2024</small>
+      </div>
+      <div class="cols equal">
+        <article class="panel">
+          <div class="panelhead"><div><h3>Toss impact</h3><small>Does the toss winner also win?</small></div></div>
+          <div class="impact-stat"><b id="toss-win-rate">—</b><span>of completed matches</span></div>
+          <div class="compare">
+            <div><span>Toss winner won</span><div class="track"><i id="toss-won-bar"></i></div><b id="toss-won-count">—</b></div>
+            <div><span>Toss winner lost</span><div class="track"><i class="blue" id="toss-lost-bar"></i></div><b id="toss-lost-count">—</b></div>
+          </div>
+          <p class="source-note" id="toss-detail">Loading toss results…</p>
+        </article>
+        <article class="panel">
+          <div class="panelhead"><div><h3>Match results</h3><small>Recorded result types</small></div></div>
+          <div class="donutrow">
+            <div class="donut" id="result-donut"><b id="result-total">—</b><small>matches</small></div>
+            <div class="legend" id="result-legend">
+              <p><i class="orangebg"></i> Won by wickets <b id="result-wickets">—</b></p>
+              <p><i class="bluebg"></i> Won by runs <b id="result-runs">—</b></p>
+              <p><i class="tiebg"></i> Tied <b id="result-ties">—</b></p>
+              <p><i class="nobg"></i> No result <b id="result-no-result">—</b></p>
+            </div>
+          </div>
+          <p class="source-note" id="result-detail">Loading match results…</p>
+        </article>
+      </div>
+      <article class="panel venue-panel">
+        <div class="panelhead">
+          <div><h3>Venue trends</h3><small>Match volume by recorded venue</small></div>
+          <span class="tag">MATCHES</span>
+        </div>
+        <div id="venue-rankings" class="venue-rankings" aria-label="Most frequent venues"></div>
+        <p class="source-note" id="venue-status">Loading venue counts…</p>
+      </article>
+      <article class="panel season-panel">
+        <div class="panelhead"><div><h3>Season history</h3><small>Matches per recorded season</small></div></div>
+        <div id="season-rankings" class="season-rankings"></div>
+      </article>
+      <div class="historical-note">
+        <b>Historical context</b>
+        <p id="historical-context">Loading historical dataset coverage…</p>
+      </div>
+    </section>
+
+    <section id="powerbi" class="section page-hidden" data-page="powerbi">
+      <div class="heading">
+        <div><span class="eyebrow">BUSINESS INTELLIGENCE</span><h2>Power BI reports</h2></div>
+        <span class="tag">REPORT FILE &amp; PREVIEWS</span>
+      </div>
+      <article class="panel report-panel">
+        <div class="eyebrow orange">IPL DASHBOARD · POWER BI DESKTOP</div>
+        <h3>Explore the full report</h3>
+        <p>Open the original Power BI report to interact with its filters, visuals and detailed analysis. For a browser-embedded interactive report, publish it to an approved Power BI workspace and configure a secure embed URL. Do not use Publish to web for confidential data.</p>
+        <a class="button" href="/reports/ipl-dashboard.pbix" download>Download Power BI report ↓</a>
+        <div class="cols equal preview-grid">
+          <div>
+            <img src="/reports/previews/page1.png" alt="Power BI dashboard preview showing seasonal trends, team performance and match insights">
+            <small>Dashboard preview · Page 1</small>
+          </div>
+          <div>
+            <img src="/reports/previews/page2.png" alt="Power BI dashboard preview showing close matches, toss decisions and scoring trends">
+            <small>Dashboard preview · Page 2</small>
+          </div>
+        </div>
+      </article>
+      <div class="notice">
+        <b>About web embedding</b>
+        <p>A Power BI Desktop (.pbix) file cannot run as an interactive browser report by itself. A Power BI embed URL is required.</p>
+      </div>
+    </section>
+
+    <section id="prediction" class="section page-hidden" data-page="prediction">
+      <div class="heading">
+        <div><span class="eyebrow">MACHINE LEARNING</span><h2>Match prediction lab</h2></div>
+        <span class="tag warn">EXPERIMENTAL MODEL</span>
+      </div>
+      <div class="panel predgrid">
+        <div>
+          <span class="eyebrow orange">RANDOM FOREST CLASSIFIER</span>
+          <h3 class="large">Can data anticipate<br>the result?</h3>
+          <p>The current experiment uses post-toss information. It is a learning baseline, not a reliable match-outcome tool.</p>
+          <div class="minikpis">
+            <div><small>MODEL ACCURACY</small><b id="prediction-accuracy">—</b></div>
+            <div><small>TOSS-WINNER BASELINE</small><b id="prediction-baseline">—</b></div>
+            <div><small>TEST MATCHES</small><b id="prediction-test-size">—</b></div>
+          </div>
+        </div>
+        <form class="form" id="prediction-form">
+          <h3>Match conditions</h3>
+          <label>Season<select id="season" required disabled></select></label>
+          <label>Team 1<select id="a" required disabled></select></label>
+          <label>Team 2<select id="b" required disabled></select></label>
+          <label>Venue<select id="venue" required disabled></select></label>
+          <label>Toss winner<select id="toss" disabled><option value="1">Team 1</option><option value="0">Team 2</option></select></label>
+          <label>Toss decision<select id="decision" required disabled></select></label>
+          <label>Who bats first?<select id="batfirst" disabled><option value="1">Team 1</option><option value="0">Team 2</option></select></label>
+          <button id="predict" type="submit" disabled>Predict match winner →</button>
+          <div id="result" class="prediction-result" role="status" hidden></div>
+          <p id="msg" role="status">Checking trained-model connection…</p>
+        </form>
+      </div>
+    </section>
+
+    <section id="model" class="section page-hidden" data-page="model">
+      <div class="heading">
+        <div><span class="eyebrow">MODEL TRANSPARENCY</span><h2>Performance, honestly presented</h2></div>
+        <small>Metrics returned by the existing evaluation API</small>
+      </div>
+      <article class="panel model">
+        <div class="evaluation-kpis">
+          <div><span class="eyebrow">MODEL ACCURACY</span><b class="accuracy" id="eval-accuracy">—</b></div>
+          <div><span class="eyebrow">TOSS-WINNER BASELINE</span><b class="accuracy baseline-value" id="eval-baseline">—</b></div>
+          <div><span class="eyebrow">TEST MATCHES</span><b class="accuracy test-value" id="eval-test-size">—</b></div>
+        </div>
+        <div class="compare evaluation-chart" role="img" aria-label="Comparison of model accuracy and toss-winner baseline">
+          <div><span>Random Forest</span><div class="track"><i id="eval-model-bar"></i></div><b id="eval-model-label">—</b></div>
+          <div><span>Toss-winner baseline</span><div class="track"><i class="blue" id="eval-baseline-bar"></i></div><b id="eval-baseline-label">—</b></div>
+        </div>
+        <p id="evaluation-status" class="source-note" role="status">Loading model evaluation…</p>
+        <div class="notice">
+          <b>Limitations</b>
+          <p id="evaluation-limitations">Evaluation limitations will be loaded from the reproducible report.</p>
+        </div>
+      </article>
+    </section>
+
+    <footer>IPL ANALYTICS · PORTFOLIO PROJECT <span>Built with curiosity &amp; data ✦</span></footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

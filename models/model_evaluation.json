@@ -1,0 +1,615 @@
+{
+  "evaluation_protocol": "Chronological 80/20 holdout; rows with no winner are excluded.",
+  "feature_columns": [
+    "season",
+    "team1",
+    "team2",
+    "venue",
+    "toss_winner_is_team1",
+    "toss_decision",
+    "team1_batting_first"
+  ],
+  "training_matches": 872,
+  "test_matches": 218,
+  "training_start_date": "2008-04-18",
+  "training_end_date": "2021-10-15",
+  "test_start_date": "2022-03-26",
+  "test_end_date": "2024-05-26",
+  "random_forest_accuracy": 0.422,
+  "random_forest_correct": 92,
+  "random_forest_accuracy_95_ci": [
+    0.3584,
+    0.4884
+  ],
+  "toss_winner_baseline_accuracy": 0.4633,
+  "toss_winner_baseline_correct": 101,
+  "toss_winner_baseline_95_ci": [
+    0.3983,
+    0.5296
+  ],
+  "majority_team_baseline_accuracy": 0.078,
+  "model_minus_toss_baseline_percentage_points": -4.13,
+  "macro_f1": 0.3824,
+  "weighted_f1": 0.3682,
+  "matches_with_unseen_team": 83,
+  "matches_with_unseen_winner": 52,
+  "classification_report": {
+    "Chennai Super Kings": {
+      "precision": 0.40625,
+      "recall": 0.6190476190476191,
+      "f1-score": 0.49056603773584906,
+      "support": 21.0
+    },
+    "Delhi Capitals": {
+      "precision": 0.39285714285714285,
+      "recall": 0.5789473684210527,
+      "f1-score": 0.46808510638297873,
+      "support": 19.0
+    },
+    "Gujarat Titans": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 28.0
+    },
+    "Kolkata Knight Riders": {
+      "precision": 0.5416666666666666,
+      "recall": 0.5652173913043478,
+      "f1-score": 0.5531914893617021,
+      "support": 23.0
+    },
+    "Lucknow Super Giants": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 24.0
+    },
+    "Mumbai Indians": {
+      "precision": 0.3235294117647059,
+      "recall": 0.6470588235294118,
+      "f1-score": 0.43137254901960786,
+      "support": 17.0
+    },
+    "Punjab Kings": {
+      "precision": 0.32,
+      "recall": 0.4444444444444444,
+      "f1-score": 0.37209302325581395,
+      "support": 18.0
+    },
+    "Rajasthan Royals": {
+      "precision": 0.5416666666666666,
+      "recall": 0.5,
+      "f1-score": 0.52,
+      "support": 26.0
+    },
+    "Royal Challengers Bangalore": {
+      "precision": 0.48,
+      "recall": 0.5217391304347826,
+      "f1-score": 0.5,
+      "support": 23.0
+    },
+    "Sunrisers Hyderabad": {
+      "precision": 0.4230769230769231,
+      "recall": 0.5789473684210527,
+      "f1-score": 0.4888888888888889,
+      "support": 19.0
+    },
+    "accuracy": 0.42201834862385323,
+    "macro avg": {
+      "precision": 0.3429046811032105,
+      "recall": 0.44554021456027115,
+      "f1-score": 0.38241970946448406,
+      "support": 218.0
+    },
+    "weighted avg": {
+      "precision": 0.3342920363275868,
+      "recall": 0.42201834862385323,
+      "f1-score": 0.3681596546324562,
+      "support": 218.0
+    }
+  },
+  "rolling_origin": {
+    "folds": [
+      {
+        "match_count": 60,
+        "start_date": "2020-09-19",
+        "end_date": "2020-11-10",
+        "accuracy": 0.35,
+        "correct_predictions": 21,
+        "accuracy_95_ci": [
+          0.2417,
+          0.4764
+        ],
+        "macro_f1": 0.3068,
+        "weighted_f1": 0.3302,
+        "toss_winner_baseline_accuracy": 0.4167,
+        "toss_winner_baseline_correct": 25,
+        "toss_winner_baseline_95_ci": [
+          0.3006,
+          0.5427
+        ],
+        "majority_team_baseline_accuracy": 0.1833,
+        "model_minus_toss_baseline_percentage_points": -6.67,
+        "matches_with_unseen_team": 0,
+        "matches_with_unseen_winner": 0,
+        "classification_report": {
+          "Chennai Super Kings": {
+            "precision": 0.4166666666666667,
+            "recall": 0.8333333333333334,
+            "f1-score": 0.5555555555555556,
+            "support": 6.0
+          },
+          "Delhi Capitals": {
+            "precision": 0.3333333333333333,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.3333333333333333,
+            "support": 9.0
+          },
+          "Kolkata Knight Riders": {
+            "precision": 0.25,
+            "recall": 0.14285714285714285,
+            "f1-score": 0.18181818181818182,
+            "support": 7.0
+          },
+          "Mumbai Indians": {
+            "precision": 0.6363636363636364,
+            "recall": 0.6363636363636364,
+            "f1-score": 0.6363636363636364,
+            "support": 11.0
+          },
+          "Punjab Kings": {
+            "precision": 0.2857142857142857,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.3076923076923077,
+            "support": 6.0
+          },
+          "Rajasthan Royals": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 6.0
+          },
+          "Royal Challengers Bangalore": {
+            "precision": 0.16666666666666666,
+            "recall": 0.14285714285714285,
+            "f1-score": 0.15384615384615385,
+            "support": 7.0
+          },
+          "Sunrisers Hyderabad": {
+            "precision": 0.3333333333333333,
+            "recall": 0.25,
+            "f1-score": 0.2857142857142857,
+            "support": 8.0
+          },
+          "accuracy": 0.35,
+          "macro avg": {
+            "precision": 0.30275974025974023,
+            "recall": 0.3340097402597403,
+            "f1-score": 0.30679043179043175,
+            "support": 60.0
+          },
+          "weighted avg": {
+            "precision": 0.32996031746031745,
+            "recall": 0.35,
+            "f1-score": 0.3302475302475303,
+            "support": 60.0
+          }
+        },
+        "season": "2020/21"
+      },
+      {
+        "match_count": 60,
+        "start_date": "2021-04-09",
+        "end_date": "2021-10-15",
+        "accuracy": 0.5167,
+        "correct_predictions": 31,
+        "accuracy_95_ci": [
+          0.3931,
+          0.6383
+        ],
+        "macro_f1": 0.4733,
+        "weighted_f1": 0.4913,
+        "toss_winner_baseline_accuracy": 0.5833,
+        "toss_winner_baseline_correct": 35,
+        "toss_winner_baseline_95_ci": [
+          0.4573,
+          0.6994
+        ],
+        "majority_team_baseline_accuracy": 0.1167,
+        "model_minus_toss_baseline_percentage_points": -6.67,
+        "matches_with_unseen_team": 0,
+        "matches_with_unseen_winner": 0,
+        "classification_report": {
+          "Chennai Super Kings": {
+            "precision": 0.7692307692307693,
+            "recall": 0.9090909090909091,
+            "f1-score": 0.8333333333333334,
+            "support": 11.0
+          },
+          "Delhi Capitals": {
+            "precision": 0.25,
+            "recall": 0.2,
+            "f1-score": 0.2222222222222222,
+            "support": 10.0
+          },
+          "Kolkata Knight Riders": {
+            "precision": 0.8,
+            "recall": 0.4444444444444444,
+            "f1-score": 0.5714285714285714,
+            "support": 9.0
+          },
+          "Mumbai Indians": {
+            "precision": 0.5,
+            "recall": 0.7142857142857143,
+            "f1-score": 0.5882352941176471,
+            "support": 7.0
+          },
+          "Punjab Kings": {
+            "precision": 0.5,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.5714285714285714,
+            "support": 6.0
+          },
+          "Rajasthan Royals": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 5.0
+          },
+          "Royal Challengers Bangalore": {
+            "precision": 0.5,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.4,
+            "support": 9.0
+          },
+          "Sunrisers Hyderabad": {
+            "precision": 0.42857142857142855,
+            "recall": 1.0,
+            "f1-score": 0.6,
+            "support": 3.0
+          },
+          "accuracy": 0.5166666666666667,
+          "macro avg": {
+            "precision": 0.4684752747252747,
+            "recall": 0.5334776334776334,
+            "f1-score": 0.47333099906629317,
+            "support": 60.0
+          },
+          "weighted avg": {
+            "precision": 0.5074542124542124,
+            "recall": 0.5166666666666667,
+            "f1-score": 0.49129940865234983,
+            "support": 60.0
+          }
+        },
+        "season": "2021"
+      },
+      {
+        "match_count": 74,
+        "start_date": "2022-03-26",
+        "end_date": "2022-05-29",
+        "accuracy": 0.3378,
+        "correct_predictions": 25,
+        "accuracy_95_ci": [
+          0.2405,
+          0.4512
+        ],
+        "macro_f1": 0.3055,
+        "weighted_f1": 0.2832,
+        "toss_winner_baseline_accuracy": 0.4865,
+        "toss_winner_baseline_correct": 36,
+        "toss_winner_baseline_95_ci": [
+          0.3761,
+          0.5982
+        ],
+        "majority_team_baseline_accuracy": 0.0541,
+        "model_minus_toss_baseline_percentage_points": -14.86,
+        "matches_with_unseen_team": 29,
+        "matches_with_unseen_winner": 21,
+        "classification_report": {
+          "Chennai Super Kings": {
+            "precision": 0.25,
+            "recall": 0.75,
+            "f1-score": 0.375,
+            "support": 4.0
+          },
+          "Delhi Capitals": {
+            "precision": 0.25,
+            "recall": 0.2857142857142857,
+            "f1-score": 0.26666666666666666,
+            "support": 7.0
+          },
+          "Gujarat Titans": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 12.0
+          },
+          "Kolkata Knight Riders": {
+            "precision": 0.3333333333333333,
+            "recall": 0.5,
+            "f1-score": 0.4,
+            "support": 6.0
+          },
+          "Lucknow Super Giants": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 9.0
+          },
+          "Mumbai Indians": {
+            "precision": 0.25,
+            "recall": 0.75,
+            "f1-score": 0.375,
+            "support": 4.0
+          },
+          "Punjab Kings": {
+            "precision": 0.2857142857142857,
+            "recall": 0.2857142857142857,
+            "f1-score": 0.2857142857142857,
+            "support": 7.0
+          },
+          "Rajasthan Royals": {
+            "precision": 0.5,
+            "recall": 0.4,
+            "f1-score": 0.4444444444444444,
+            "support": 10.0
+          },
+          "Royal Challengers Bangalore": {
+            "precision": 0.5454545454545454,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.6,
+            "support": 9.0
+          },
+          "Sunrisers Hyderabad": {
+            "precision": 0.2857142857142857,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.3076923076923077,
+            "support": 6.0
+          },
+          "accuracy": 0.33783783783783783,
+          "macro avg": {
+            "precision": 0.270021645021645,
+            "recall": 0.39714285714285713,
+            "f1-score": 0.3054517704517704,
+            "support": 74.0
+          },
+          "weighted avg": {
+            "precision": 0.26180238680238677,
+            "recall": 0.33783783783783783,
+            "f1-score": 0.2832062832062832,
+            "support": 74.0
+          }
+        },
+        "season": "2022"
+      },
+      {
+        "match_count": 73,
+        "start_date": "2023-03-31",
+        "end_date": "2023-05-29",
+        "accuracy": 0.5616,
+        "correct_predictions": 41,
+        "accuracy_95_ci": [
+          0.4476,
+          0.6695
+        ],
+        "macro_f1": 0.5171,
+        "weighted_f1": 0.5598,
+        "toss_winner_baseline_accuracy": 0.4658,
+        "toss_winner_baseline_correct": 34,
+        "toss_winner_baseline_95_ci": [
+          0.3559,
+          0.579
+        ],
+        "majority_team_baseline_accuracy": 0.1233,
+        "model_minus_toss_baseline_percentage_points": 9.59,
+        "matches_with_unseen_team": 0,
+        "matches_with_unseen_winner": 0,
+        "classification_report": {
+          "Chennai Super Kings": {
+            "precision": 0.8181818181818182,
+            "recall": 0.9,
+            "f1-score": 0.8571428571428571,
+            "support": 10.0
+          },
+          "Delhi Capitals": {
+            "precision": 0.25,
+            "recall": 0.2,
+            "f1-score": 0.2222222222222222,
+            "support": 5.0
+          },
+          "Gujarat Titans": {
+            "precision": 0.8,
+            "recall": 0.7272727272727273,
+            "f1-score": 0.7619047619047619,
+            "support": 11.0
+          },
+          "Kolkata Knight Riders": {
+            "precision": 0.75,
+            "recall": 0.5,
+            "f1-score": 0.6,
+            "support": 6.0
+          },
+          "Lucknow Super Giants": {
+            "precision": 1.0,
+            "recall": 0.25,
+            "f1-score": 0.4,
+            "support": 8.0
+          },
+          "Mumbai Indians": {
+            "precision": 0.5454545454545454,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.6,
+            "support": 9.0
+          },
+          "Punjab Kings": {
+            "precision": 0.2857142857142857,
+            "recall": 0.3333333333333333,
+            "f1-score": 0.3076923076923077,
+            "support": 6.0
+          },
+          "Rajasthan Royals": {
+            "precision": 0.7142857142857143,
+            "recall": 0.7142857142857143,
+            "f1-score": 0.7142857142857143,
+            "support": 7.0
+          },
+          "Royal Challengers Bangalore": {
+            "precision": 0.3333333333333333,
+            "recall": 0.2857142857142857,
+            "f1-score": 0.3076923076923077,
+            "support": 7.0
+          },
+          "Sunrisers Hyderabad": {
+            "precision": 0.2727272727272727,
+            "recall": 0.75,
+            "f1-score": 0.4,
+            "support": 4.0
+          },
+          "accuracy": 0.5616438356164384,
+          "macro avg": {
+            "precision": 0.5769696969696969,
+            "recall": 0.5327272727272727,
+            "f1-score": 0.5170940170940171,
+            "support": 73.0
+          },
+          "weighted avg": {
+            "precision": 0.6271155784854415,
+            "recall": 0.5616438356164384,
+            "f1-score": 0.5597738638834528,
+            "support": 73.0
+          }
+        },
+        "season": "2023"
+      },
+      {
+        "match_count": 71,
+        "start_date": "2024-03-22",
+        "end_date": "2024-05-26",
+        "accuracy": 0.5352,
+        "correct_predictions": 38,
+        "accuracy_95_ci": [
+          0.4204,
+          0.6464
+        ],
+        "macro_f1": 0.5024,
+        "weighted_f1": 0.5377,
+        "toss_winner_baseline_accuracy": 0.4366,
+        "toss_winner_baseline_correct": 31,
+        "toss_winner_baseline_95_ci": [
+          0.3275,
+          0.5523
+        ],
+        "majority_team_baseline_accuracy": 0.0563,
+        "model_minus_toss_baseline_percentage_points": 9.86,
+        "matches_with_unseen_team": 0,
+        "matches_with_unseen_winner": 0,
+        "classification_report": {
+          "Chennai Super Kings": {
+            "precision": 0.4,
+            "recall": 0.5714285714285714,
+            "f1-score": 0.47058823529411764,
+            "support": 7.0
+          },
+          "Delhi Capitals": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1-score": 0.0,
+            "support": 7.0
+          },
+          "Gujarat Titans": {
+            "precision": 0.4,
+            "recall": 0.8,
+            "f1-score": 0.5333333333333333,
+            "support": 5.0
+          },
+          "Kolkata Knight Riders": {
+            "precision": 1.0,
+            "recall": 0.6363636363636364,
+            "f1-score": 0.7777777777777778,
+            "support": 11.0
+          },
+          "Lucknow Super Giants": {
+            "precision": 0.375,
+            "recall": 0.42857142857142855,
+            "f1-score": 0.4,
+            "support": 7.0
+          },
+          "Mumbai Indians": {
+            "precision": 0.25,
+            "recall": 0.5,
+            "f1-score": 0.3333333333333333,
+            "support": 4.0
+          },
+          "Punjab Kings": {
+            "precision": 0.4,
+            "recall": 0.4,
+            "f1-score": 0.4,
+            "support": 5.0
+          },
+          "Rajasthan Royals": {
+            "precision": 0.6,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.631578947368421,
+            "support": 9.0
+          },
+          "Royal Challengers Bangalore": {
+            "precision": 1.0,
+            "recall": 0.5714285714285714,
+            "f1-score": 0.7272727272727273,
+            "support": 7.0
+          },
+          "Sunrisers Hyderabad": {
+            "precision": 0.8571428571428571,
+            "recall": 0.6666666666666666,
+            "f1-score": 0.75,
+            "support": 9.0
+          },
+          "accuracy": 0.5352112676056338,
+          "macro avg": {
+            "precision": 0.5282142857142856,
+            "recall": 0.5241125541125541,
+            "f1-score": 0.5023884354379711,
+            "support": 71.0
+          },
+          "weighted avg": {
+            "precision": 0.5850603621730383,
+            "recall": 0.5352112676056338,
+            "f1-score": 0.5376731383075951,
+            "support": 71.0
+          }
+        },
+        "season": "2024"
+      }
+    ],
+    "match_count": 338,
+    "accuracy": 0.4615,
+    "correct_predictions": 156,
+    "accuracy_95_ci": [
+      0.4091,
+      0.5148
+    ],
+    "toss_winner_baseline_accuracy": 0.4763,
+    "toss_winner_baseline_correct": 161,
+    "toss_winner_baseline_95_ci": [
+      0.4237,
+      0.5295
+    ],
+    "model_minus_toss_baseline_percentage_points": -1.48
+  },
+  "limitations": [
+    "The model has not demonstrated better accuracy than the toss-winner baseline.",
+    "The chronological test set is small and spans only the latest seasons in this dataset.",
+    "Teams and seasons absent from training cannot be reliably predicted.",
+    "The winning-team class score is not a calibrated probability.",
+    "The exact Kaggle dataset and its license have not been identified; verify usage rights before redistribution."
+  ],
+  "data_provenance": "Kaggle (exact dataset and URL not provided); license unknown.",
+  "model_training_rows": 1090,
+  "model_training_start_date": "2008-04-18",
+  "model_training_end_date": "2024-05-26",
+  "matches_file": "matches.csv",
+  "matches_sha256": "8a0394246d2a76b44526565f2245d8f4feff91babe57ab16676a2c3d67aa0846",
+  "deliveries_file": "deliveries.csv",
+  "deliveries_sha256": "142236ea52950795dab266d4aa392c7645bd1a0db4704f0b8058afd96e24e2c2"
+}
