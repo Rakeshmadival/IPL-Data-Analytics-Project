@@ -29,6 +29,38 @@ python -m unittest backend.test_app
 
 Open `PowerBI/IPL_DASHBOARD_REPORT.pbix` in Power BI Desktop. The website's Power BI Reports page includes previews and a download link. To embed an interactive report in the website, configure a Power BI embed URL in a future deployment. A `.pbix` file cannot be embedded directly as a live web report.
 
+
+
+
+## Website Screenshots
+
+### 1. Overview
+![Overview](Dashboard_Screenshots/overview.png)
+
+### 2. Team Analysis
+![Team Analysis](Dashboard_Screenshots/team-analysis.png)
+
+### 3. Match Insights
+![Match Insights](Dashboard_Screenshots/match-insights.png)
+
+### 4. Power BI Reports
+![Power BI Reports](Dashboard_Screenshots/powerbi-reports.png)
+
+### 5. Prediction Lab
+![Prediction Lab](Dashboard_Screenshots/prediction-lab.png)
+
+### 6. Model Evaluation
+![Model Evaluation](Dashboard_Screenshots/model-evaluation.png)
+
+## Power BI Dashboard — Actual Report Pages
+
+### Report Page 1
+![Power BI Page 1](Dashboard_Screenshots/page1.png)
+
+### Report Page 2
+![Power BI Page 2](Dashboard_Screenshots/page2.png)
+
+
 ## Project contents
 
 - `Analysis/` — IPL analysis handbook notebook
